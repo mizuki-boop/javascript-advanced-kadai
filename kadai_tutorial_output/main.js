@@ -2,6 +2,7 @@
 let untyped='';
 let typed='';
 let score=0;
+let typecount=0;
 
 // 必要なHTML要素の取得
 const untypedfield=document.getElementById('untyped');
@@ -9,6 +10,7 @@ const typedfield=document.getElementById('typed');
 const wrap=document.getElementById('wrap');
 const start=document.getElementById('start');
 const count=document.getElementById('count');
+const typecountfield=document.getElementById('typecount');
 
 // 複数のテキストを格納する配列
 const textLists=[
@@ -52,6 +54,8 @@ const keyPress = e => {
     }
     // 正タイプの場合
     score++;
+   
+    
 
     typed+=untyped.substring(0,1);
     untyped=untyped.substring(1);
@@ -62,6 +66,7 @@ const keyPress = e => {
     if(untyped===''){
         createText();
     }
+    typecountfield.textContent=score;
 };
 
 
